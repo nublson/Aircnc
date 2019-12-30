@@ -33,7 +33,9 @@ const Dashboard = () => {
 								backgroundImage: `url(${spot.thumbnail_url})`
 							}}
 						/>
-						<strong>{spot.company}</strong>
+						<strong>
+							{spot.company ? spot.company : 'Unknown'}
+						</strong>
 						<span>
 							{' '}
 							{spot.price
