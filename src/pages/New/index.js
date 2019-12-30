@@ -4,7 +4,9 @@ import { Formik, Form, Field } from 'formik'
 import camera from '../../assets/camera.svg'
 import './styles.scss'
 
-const New = () => {
+import api from '../../services/api'
+
+const New = ({ history }) => {
 	const [thumbnail, setThumbnail] = useState(null)
 
 	const preview = useMemo(() => {
@@ -19,8 +21,22 @@ const New = () => {
 				price: '',
 				techs: ''
 			}}
-			onSubmit={(values, actions) => {
-				console.log(values.thumbnail.name)
+			onSubmit={async ({ thumbnail, company, price, techs }, actions) => {
+				const data = new FormData()
+				const user_id = localStorage.getItem('user')
+
+				data.append('thumbnail', thumbnail)
+				data.append('company', company)
+				data.append('price', price)
+				data.append('techs', techs)
+
+				await api.post('/spots', data, {
+					headers: {
+						user_id
+					}
+				})
+
+				history.push('/dashboard')
 			}}
 		>
 			{props => (

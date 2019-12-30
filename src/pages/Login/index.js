@@ -24,7 +24,6 @@ const Login = ({ history }) => {
 					const { _id } = response.data
 					localStorage.setItem('user', _id)
 
-					actions.resetForm()
 					history.push('/dashboard')
 				}}
 			>
