@@ -1,31 +1,42 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import { Formik, Form, Field } from 'formik'
 
 import camera from '../../assets/camera.svg'
 import './styles.scss'
 
 const New = () => {
+	const [thumbnail, setThumbnail] = useState(null)
+
+	const preview = useMemo(() => {
+		return thumbnail ? URL.createObjectURL(thumbnail) : null
+	}, [thumbnail])
+
 	return (
 		<Formik
 			initialValues={{
-				thumbnail: null,
+				thumbnail: thumbnail,
 				company: '',
 				price: '',
 				techs: ''
 			}}
 			onSubmit={(values, actions) => {
-				console.log(values)
+				console.log(values.thumbnail.name)
 			}}
 		>
 			{props => (
 				<Form>
-					<label id='thumbnail'>
+					<label
+						id='thumbnail'
+						style={{ backgroundImage: `url(${preview})` }}
+						className={thumbnail && 'has-thumbnail'}
+					>
 						<input
 							type='file'
 							name='thumbnail'
 							onChange={e =>
-								(props.values.thumbnail =
-									e.currentTarget.files[0])
+								setThumbnail(
+									(props.values.thumbnail = e.target.files[0])
+								)
 							}
 						/>
 
