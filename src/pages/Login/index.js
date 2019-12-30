@@ -30,7 +30,9 @@ const Login = ({ history }) => {
 			>
 				{() => (
 					<Form>
-						<label htmlFor='email'>E-MAIL *</label>
+						<label htmlFor='email'>
+							E-MAIL <span className='required'>*</span>
+						</label>
 						<Field
 							type='email'
 							id='email'
