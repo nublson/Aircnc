@@ -90,6 +90,7 @@ button {
 		font-weight: bold;
 		background: $color-primary;
 		color: $color-white;
+		cursor: pointer;
 
 		&:hover {
 			background: darken($color-primary, 5%);
