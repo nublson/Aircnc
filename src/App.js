@@ -1,6 +1,8 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 
+import api from './services/api'
+
 import './App.scss'
 
 import logo from './assets/logo.svg'
@@ -21,11 +23,18 @@ const App = () => {
 						email: ''
 					}}
 					onSubmit={async (values, actions) => {
-						console.log(values.email)
+						// Enviando dados para api para fazer o login
+						const response = await api.post('/sessions', {
+							email: values.email
+						})
+						// Armazenando o ID do usuário no localStorage
+						const { _id } = response.data
+						localStorage.setItem('user', _id)
+
 						actions.resetForm()
 					}}
 				>
-					{props => (
+					{() => (
 						<Form>
 							<label htmlFor='email'>E-MAIL *</label>
 							<Field
