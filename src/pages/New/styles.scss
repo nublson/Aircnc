@@ -1,0 +1,15 @@
+#thumbnail {
+	height: 16rem;
+	margin-bottom: 2rem;
+	border: 0.1rem dashed #ddd;
+	background-size: cover;
+	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	input {
+		display: none;
+	}
+}
