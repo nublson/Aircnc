@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 
 import logo from './assets/logo.svg'
 
@@ -18,7 +18,9 @@ const App = () => {
 					<label htmlFor='email'>E-MAIL *</label>
 					<input type='email' id='email' placeholder='Seu e-mail' />
 
-					<button type='submit'>Entrar</button>
+					<button className='btn' type='submit'>
+						Entrar
+					</button>
 				</form>
 			</div>
 		</div>
