@@ -67,6 +67,7 @@ const New = ({ history }) => {
 						name='company'
 						id='company'
 						placeholder='Nome da sua empresa...'
+						autoComplete='off'
 					/>
 
 					<label htmlFor='price'>
@@ -78,6 +79,7 @@ const New = ({ history }) => {
 						name='price'
 						id='price'
 						placeholder='Valor Diário...'
+						autoComplete='off'
 					/>
 
 					<label htmlFor='techs'>
@@ -89,6 +91,7 @@ const New = ({ history }) => {
 						name='techs'
 						id='techs'
 						placeholder='Tecnologias usadas...'
+						autoComplete='off'
 					/>
 
 					<button type='submit' className='btn'>
