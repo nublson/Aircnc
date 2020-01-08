@@ -1,9 +1,8 @@
-# Airbnb Clone (Frontend w/ React.js)
+# Aircnc (Frontend w/ React.js)
 
-![Airbnb Clone Preview](./thumbnail.png)
+![Aircnc Preview](./thumbnail.png)
 
-This is the clone of Airbnb, a simple web application made with [React.js](https://reactjs.org/)
-which allows us to create spots so that non-employed developers can spend a few hours programming in a developer environment within the company that published the spot.
+This is the frontend web version of Aircnc, focused on the business side. Allows companies to sign in and create Spots for developers to rent.
 
 ## Getting Started
 
