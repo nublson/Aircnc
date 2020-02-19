@@ -1,6 +1,6 @@
 # Aircnc (Frontend w/ React.js)
 
-![Aircnc Preview](./thumbnail.png)
+![Aircnc Preview](./aircnc.png)
 
 This is the frontend web version of Aircnc, focused on the business side. Allows companies to sign in and create Spots for developers to rent.
 
